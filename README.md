@@ -90,7 +90,7 @@ When a user likes a song, the application triggers a local notification to infor
 # Clone the Repository
 
 ```bash
-git clone [YOUR_GITHUB_REPOSITORY_URL]
+git clone https://github.com/lucky0927/Assignment_01.git
 ```
 
 # Navigate to the Project Folder
@@ -130,5 +130,5 @@ Video Link: [Add Your Demonstration Video Link Here]
 
 # 12. GitHub Repository
 
-Repository Link: [Add Your GitHub Repository Link Here]
+Repository Link: https://github.com/lucky0927/Assignment_01.git
 # Assignment_01
