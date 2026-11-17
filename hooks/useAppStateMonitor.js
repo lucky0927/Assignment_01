@@ -1,5 +1,3 @@
-// hooks/useAppStateMonitor.js
-// Monitors application state transitions between background and foreground using React Native AppState API
 import { useEffect, useRef, useState } from 'react';
 import { AppState } from 'react-native';
 
@@ -11,9 +9,7 @@ export function useAppStateMonitor() {
   useEffect(() => {
     console.log(`[AppState] Initial state is: ${appState.current}`);
 
-    // Subscribe to AppState changes
     const subscription = AppState.addEventListener('change', (nextAppState) => {
-      // Check if transitioning from inactive/background to active (foreground)
       if (
         appState.current.match(/inactive|background/) &&
         nextAppState === 'active'
@@ -21,7 +17,6 @@ export function useAppStateMonitor() {
         console.log('[AppState] 🚀 App has returned to the foreground (active)!');
         setForegroundNotice(`Welcome back to Sinduwa! (${new Date().toLocaleTimeString()})`);
         
-        // Auto-dismiss the toast notice after 3 seconds
         setTimeout(() => {
           setForegroundNotice(null);
         }, 3000);
@@ -33,7 +28,6 @@ export function useAppStateMonitor() {
       setAppStateVisible(appState.current);
     });
 
-    // Cleanup subscription when component unmounts
     return () => {
       console.log('[AppState] Removing AppState change listener on unmount');
       subscription.remove();

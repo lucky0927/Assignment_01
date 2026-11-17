@@ -126,7 +126,7 @@ The demonstration video shows the main application features, including:
  AppState background and foreground detection.
  Navigation between screens.
 
-Video Link: [Add Your Demonstration Video Link Here]
+Video Link: https://drive.google.com/file/d/1vZznIBAIlb1qOiNE2fcVJH4BDW-qOOIm/view?usp=drive_link
 
 # 12. GitHub Repository
 

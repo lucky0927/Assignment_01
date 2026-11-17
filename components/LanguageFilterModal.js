@@ -1,5 +1,3 @@
-// components/LanguageFilterModal.js
-// Simple modal component for filtering songs by language
 import React from 'react';
 import {
   Modal,
@@ -29,7 +27,6 @@ export default function LanguageFilterModal({
         <View style={styles.modalOverlay}>
           <TouchableWithoutFeedback>
             <View style={styles.modalContainer}>
-              {/* Header */}
               <View style={styles.header}>
                 <Text style={styles.title}>Filter by Language</Text>
                 <Pressable
@@ -42,7 +39,6 @@ export default function LanguageFilterModal({
                 </Pressable>
               </View>
 
-              {/* Language Options */}
               <View style={styles.optionsList}>
                 {LANGUAGES.map((language) => {
                   const isSelected = selectedLanguage === language;
@@ -79,7 +75,6 @@ export default function LanguageFilterModal({
                 })}
               </View>
 
-              {/* Close Button */}
               <Pressable
                 style={styles.closeBtn}
                 onPress={onClose}

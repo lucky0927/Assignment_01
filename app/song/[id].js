@@ -1,5 +1,3 @@
-// app/song/[id].js
-// Song Details Screen with lyrics viewer, album artwork, and Like/Unlike functionality
 import React from 'react';
 import {
   View,
@@ -22,11 +20,9 @@ export default function SongDetailsScreen() {
   const router = useRouter();
   const { isLiked, toggleLike } = useFavorites();
 
-  // Find song by id
   const song = songs.find((item) => item.id === String(id));
   const liked = song ? isLiked(song.id) : false;
 
-  // Fallback if song not found
   if (!song) {
     return (
       <SafeAreaView style={styles.safeArea}>
@@ -49,7 +45,6 @@ export default function SongDetailsScreen() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-        {/* Top Navigation Bar */}
         <View style={styles.navBar}>
           <Pressable
             onPress={() => router.back()}
@@ -80,20 +75,17 @@ export default function SongDetailsScreen() {
           </Pressable>
         </View>
 
-        {/* Scrollable Song Details & Lyrics */}
         <ScrollView
           style={styles.scrollView}
           contentContainerStyle={styles.scrollContent}
           showsVerticalScrollIndicator={false}
         >
-          {/* Cover Art */}
           <Image
             source={{ uri: song.coverImage }}
             style={styles.coverImage}
             resizeMode="cover"
           />
 
-          {/* Title & Artist Metadata */}
           <View style={styles.metadataContainer}>
             <Text style={styles.songTitle}>{song.title}</Text>
             <Text style={styles.singerName}>{song.singer}</Text>
@@ -102,7 +94,6 @@ export default function SongDetailsScreen() {
             </Text>
           </View>
 
-          {/* Simple Like Action Button */}
           <Pressable
             onPress={() => toggleLike(song)}
             style={({ pressed }) => [
@@ -129,7 +120,6 @@ export default function SongDetailsScreen() {
             </Text>
           </Pressable>
 
-          {/* Lyrics View */}
           <View style={styles.lyricsSection}>
             <Text style={styles.lyricsHeading}>Lyrics:</Text>
             <Text style={styles.lyricsText}>{song.lyrics}</Text>

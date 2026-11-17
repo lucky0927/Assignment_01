@@ -1,9 +1,4 @@
-// data/songs.js
-// Sample song database for Sinduwa Mobile Application
-// Includes 14 realistic songs across Sinhala, Tamil, and English with original sample lyrics
-
 export const songs = [
-  // --- SINHALA SONGS ---
   {
     id: '1',
     title: 'Sanda Eliye (සඳ එළියේ)',
@@ -171,7 +166,6 @@ export const songs = [
 ඔබෙ සුවඳ මට සහනය සලසනවා...`
   },
 
-  // --- TAMIL SONGS ---
   {
     id: '6',
     title: 'Kanmani Anbodu (கண்மணி அன்போடு)',
@@ -300,7 +294,6 @@ export const songs = [
 உன் உருவம் தவிர எதுவும் தெரியவில்லை...`
   },
 
-  // --- ENGLISH SONGS ---
   {
     id: '10',
     title: 'Echoes in the Rain',

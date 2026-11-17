@@ -1,5 +1,3 @@
-// app/_layout.js
-// Root layout configuring global state, notifications, AppState monitoring, and Stack navigation
 import React, { useEffect } from 'react';
 import { View, Text, StyleSheet, Platform } from 'react-native';
 import { Stack } from 'expo-router';
@@ -13,7 +11,6 @@ function RootContent() {
   const { foregroundNotice } = useAppStateMonitor();
 
   useEffect(() => {
-    // Request notification permissions when the app mounts
     requestNotificationPermissions();
   }, []);
 
@@ -21,14 +18,12 @@ function RootContent() {
     <View style={styles.container}>
       <StatusBar style="dark" />
 
-      {/* Notice banner triggered by AppState API */}
       {foregroundNotice && (
         <View style={styles.appStateNotice}>
           <Text style={styles.appStateNoticeText}>{foregroundNotice}</Text>
         </View>
       )}
 
-      {/* Nested Stack navigation */}
       <Stack
         screenOptions={{
           headerShown: false,

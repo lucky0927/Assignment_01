@@ -1,9 +1,6 @@
-// services/notificationService.js
-// Handles local notifications using expo-notifications
 import * as Notifications from 'expo-notifications';
 import { Platform } from 'react-native';
 
-// Configure notification behavior for foreground notifications
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
     shouldShowAlert: true,
@@ -12,9 +9,6 @@ Notifications.setNotificationHandler({
   }),
 });
 
-/**
- * Request notification permissions from user (iOS/Android)
- */
 export async function requestNotificationPermissions() {
   if (Platform.OS === 'web') {
     return true;
@@ -50,11 +44,6 @@ export async function requestNotificationPermissions() {
   }
 }
 
-/**
- * Trigger an immediate local notification when a song is liked
- * Required Title: "Sinduwa 🎵"
- * Required Body: "Song added to your Liked Songs!"
- */
 export async function triggerLikeNotification(songTitle) {
   try {
     const bodyText = songTitle
@@ -68,7 +57,7 @@ export async function triggerLikeNotification(songTitle) {
         sound: true,
         data: { type: 'LIKE_NOTIFICATION' },
       },
-      trigger: null, // immediate notification
+      trigger: null,
     });
     console.log('[NotificationService] Local notification triggered successfully');
   } catch (error) {

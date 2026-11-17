@@ -1,5 +1,3 @@
-// app/(tabs)/index.js
-// Home Screen for Sinduwa mobile application
 import React, { useState, useMemo } from 'react';
 import {
   View,
@@ -20,7 +18,6 @@ export default function HomeScreen() {
   const [selectedLanguage, setSelectedLanguage] = useState('All Languages');
   const [filterModalVisible, setFilterModalVisible] = useState(false);
 
-  // Filter songs based on selected language
   const filteredSongs = useMemo(() => {
     if (selectedLanguage === 'All Languages') {
       return songs;
@@ -31,11 +28,9 @@ export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-        {/* Header Section */}
         <View style={styles.header}>
           <Text style={styles.appTitle}>Sinduwa</Text>
 
-          {/* Simple Filter Button */}
           <Pressable
             style={({ pressed }) => [
               styles.filterButton,
@@ -52,7 +47,6 @@ export default function HomeScreen() {
           </Pressable>
         </View>
 
-        {/* Filter Indicator Bar */}
         {selectedLanguage !== 'All Languages' && (
           <View style={styles.filterInfoBar}>
             <Text style={styles.filterInfoText}>
@@ -67,7 +61,6 @@ export default function HomeScreen() {
           </View>
         )}
 
-        {/* Song List */}
         <FlatList
           data={filteredSongs}
           keyExtractor={(item) => item.id}
@@ -90,7 +83,6 @@ export default function HomeScreen() {
           }
         />
 
-        {/* Language Filter Modal */}
         <LanguageFilterModal
           visible={filterModalVisible}
           selectedLanguage={selectedLanguage}

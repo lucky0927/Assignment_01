@@ -1,5 +1,3 @@
-// app/(tabs)/_layout.js
-// Bottom tab navigation layout for Home and Liked Songs
 import React from 'react';
 import { Tabs } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
@@ -29,7 +27,6 @@ export default function TabLayout() {
         },
       }}
     >
-      {/* Home Screen Tab */}
       <Tabs.Screen
         name="index"
         options={{
@@ -44,7 +41,6 @@ export default function TabLayout() {
         }}
       />
 
-      {/* Liked Songs Tab with Dynamic Badge */}
       <Tabs.Screen
         name="liked"
         options={{

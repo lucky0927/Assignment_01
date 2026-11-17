@@ -1,5 +1,3 @@
-// components/SongCard.js
-// Simple song list item component used in FlatList (Home & Liked Songs)
 import React from 'react';
 import { View, Text, Image, Pressable, StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router';
@@ -29,14 +27,12 @@ export default function SongCard({ song }) {
       accessibilityRole="button"
       accessibilityLabel={`View details for ${song.title} by ${song.singer}`}
     >
-      {/* Cover Image */}
       <Image
         source={{ uri: song.coverImage }}
         style={styles.coverImage}
         resizeMode="cover"
       />
 
-      {/* Song Details */}
       <View style={styles.infoContainer}>
         <Text style={styles.title} numberOfLines={1}>
           {song.title}
@@ -46,7 +42,6 @@ export default function SongCard({ song }) {
         </Text>
       </View>
 
-      {/* Like / Favorite Button */}
       <Pressable
         onPress={handleLikePress}
         style={styles.likeButton}

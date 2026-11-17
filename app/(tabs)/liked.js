@@ -1,5 +1,3 @@
-// app/(tabs)/liked.js
-// Liked Songs Screen for Sinduwa mobile application
 import React from 'react';
 import {
   View,
@@ -23,7 +21,6 @@ export default function LikedSongsScreen() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-        {/* Header Section */}
         <View style={styles.header}>
           <Text style={styles.headerTitle}>Liked Songs</Text>
           {likedSongs.length > 0 && (
@@ -33,7 +30,6 @@ export default function LikedSongsScreen() {
           )}
         </View>
 
-        {/* Liked Songs List */}
         <FlatList
           data={likedSongs}
           keyExtractor={(item) => item.id}
